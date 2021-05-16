@@ -6,6 +6,7 @@ numberOfQuestions = 5
 low = 1200
 high = 1500
 minSubmissions = 10000
+username = "roferrlls"
 
 
 @app.route('/')
@@ -16,7 +17,7 @@ def home():
 @app.route('/result', methods=["GET", "POST"])
 def getProblems():
     resp = requests.get('https://codeforces.com/api/problemset.problems')
-    submissions = processSubmissions(getProfileSubmissions("roferrlls"))
+    submissions = processSubmissions(getProfileSubmissions(username))
     data = resp.json()
     problems = data["result"]["problems"]
     problemStatistics = data["result"]["problemStatistics"]
@@ -98,3 +99,5 @@ def generateURL(contestId, index):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+# TODO error handling, invalid response from CF

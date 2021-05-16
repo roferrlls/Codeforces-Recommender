@@ -1,19 +1,16 @@
 <html>
+<head>
 <style>
 h1 {text-align: center;}
 h1.ex1 {
   padding-top: 25px;
 }
 </style>
+</head>
 <body style="background-color:black;">
+
 <h1 style="color:#ffa500" class="ex1"> Codeforces Recommender</h1>
 
-{% for item in data %}
-    <p>
-        <a href= " {{ item.url }}" target="_blank" style="color:white"> {{ item.name }} </a>
-    </p>
-{% endfor %}
 
 </body>
-
 </html>
